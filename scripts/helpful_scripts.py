@@ -4,14 +4,18 @@ from web3 import Web3
 
 DECIMALS = 8
 STARTING_PRICE = 2
+MAINNET_FORK = "mainnet-fork-dev"
 LOCAL_BLOCKCHAINS = ["development", "ganache-local"]
 
 
 def get_acc():
-    if network.show_active() in LOCAL_BLOCKCHAINS:
+    if (
+        network.show_active() in LOCAL_BLOCKCHAINS
+        or network.show_active() in MAINNET_FORK
+    ):
         return accounts[0]
     else:
-        return accounts.add(os.getenv("priv_key"))
+        return accounts.add(os.getenv("priv_key"))  # My MetaMask Account
 
 
 def get_priceFeed_address():

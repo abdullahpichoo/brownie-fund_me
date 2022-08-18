@@ -24,7 +24,8 @@ def test_funders():
     funders.append(acc)
     print(f"{fund_me.funders(0)} || {funders[0]}")
     trx = fund_me.fund({"from": acc, "value": entrance_fee})
-    print(f"{fund_me.funders(1)} || {funders[0]}")
+    print(f"{fund_me.funders(0)} || {funders[0]}")
+    assert fund_me.funders(0) == funders[0]
     # for i in range(1, 5):
     #     acc = accounts[i]
     #     funders.append(acc)
@@ -35,4 +36,5 @@ def test_funders():
 
 
 def main():
-    test_funders()
+    fund()
+    withdraw()
