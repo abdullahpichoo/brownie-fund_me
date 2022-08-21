@@ -1,7 +1,7 @@
 # Fund Me Solidity Contract using Brownie
  A solidity contract where users can fund an address and that address can withdraw those funds and it keeps a track of all the funders.
  
- This project is compiled and deployed using a python. A python frameworks based on web3.py called **Brownie** is used to deploy and test this contract.
+ This project is compiled and deployed using python. A python frameworks based on web3.py called **Brownie** is used to deploy and test this contract.
  The contract is deployed to different networks to test its working. The networks I used include
  - Local Ganache Instance
  - Rinkeby Testnet
@@ -54,10 +54,10 @@ This is a very useful file that contains some functions which are used again and
 - ``getacc()`` function returns an accounts depending on what chain we're deploying our contract on. If we're using a local ganache instance it returns one of the fake ganache accounts. If we're deploying our contract on the Rinkeby Testnet, it connects to our Metamask account and returns our account address.
 - ``get_priceFeed_address()`` returns price feeds depending on our choice of deploying networks. For local networks, it returns the price feed from the ``MockV3Aggregator.sol`` and for rinkeby testnet it returns the price feeds from the ``AggregatorV3Interface.sol`` file that we've imported in our contract.
 
-##Purpose
+###Purpose
 The purpose of coding all of this is to get familiar with smart contract development and deploying them on different chains.
 
-##How to interact with this project?
+####How to interact with this project?
 _You need to have brownie installed in order to interact with this project._
 **Following are the steps for interacting with this project:**
 - Make an empty folder in VS Code and run this command in terminal ``brownie init``. This will initialize all the required folders for this project.
