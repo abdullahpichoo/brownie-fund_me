@@ -16,25 +16,6 @@ def withdraw():
     fund_me.withdraw({"from": acc})
 
 
-def test_funders():
-    acc = get_acc()
-    fund_me = FundMe[-1]
-    entrance_fee = fund_me.getEntranceFee()
-    funders = []
-    funders.append(acc)
-    print(f"{fund_me.funders(0)} || {funders[0]}")
-    trx = fund_me.fund({"from": acc, "value": entrance_fee})
-    print(f"{fund_me.funders(0)} || {funders[0]}")
-    assert fund_me.funders(0) == funders[0]
-    # for i in range(1, 5):
-    #     acc = accounts[i]
-    #     funders.append(acc)
-    #     trx = fund_me.fund({"from": acc, "value": entrance_fee})
-    #     trx.wait(1)
-    # for i in range(5):
-    #     print(f"{fund_me.funders(i)} || {funders[i]}")
-
-
 def main():
     fund()
     withdraw()
